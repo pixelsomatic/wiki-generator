@@ -1,43 +1,54 @@
 # Wiki Generator
 
-A VS Code extension that automatically generates beautiful and descriptive wiki pages for your code features using AI technology.
-
-## Features
-
-- Generate comprehensive wiki documentation from your code with a single click
-- Right-click context menu integration in the VS Code explorer
-- Supports both selected code snippets and entire files
-- Automatically creates formatted Markdown wiki pages with sections like:
-  - Introduction
-  - Setup
-  - Code Explanation
-  - Best Practices
-- Instant preview of generated wiki pages
+A VS Code extension that automatically generates detailed wiki documentation for your code using AI.
 
 ## Requirements
 
 - Visual Studio Code ^1.96.0
 - Internet connection (for AI service access)
+- API Key for the selected AI provider
+
+## Installation
+
+Install this extension from the VS Code marketplace.
+
+## Configuration
+
+This extension requires the following configuration:
+
+1. Open VS Code Settings
+2. Search for "Wiki Generator"
+3. Configure the following settings:
+   - `wikiGenerator.provider`: AI provider to use (default: 'gemini')
+   - `wikiGenerator.apiKey`: Your API key for the selected provider
+   - `wikiGenerator.model`: Model configuration for different providers
 
 ## How to Use
 
-1. Open any code file in VS Code
-2. Either:
-   - Select a specific code snippet you want to document
-   - Or leave the file without selection to document the entire file
-3. Right-click and select "Generate Wiki Page" from the context menu
-4. The extension will automatically:
-   - Generate detailed documentation
-   - Create a new `.wiki.md` file
+1. Open VS Code
+2. Click the "File Explorer" icon in the Activity Bar
+3. Select one or multiple files you want to document
+4. Right-click and select "Generate Wiki Page" from the context menu
+5. The extension will automatically:
+   - Read the selected files
+   - Generate detailed documentation using AI
+   - Create a new `.wiki.md` file next to your source file
    - Open the generated wiki in both editor and preview mode
 
-## Extension Settings
+## Features
 
-Currently, this extension doesn't require any additional configuration.
+- Multi-file documentation support
+- AI-powered documentation generation
+- Markdown wiki file creation
+- Automatic preview
+- Progress indicators
+- Context menu integration
 
-## Known Issues
+## Dependencies
 
-- API key is currently hardcoded (will be moved to secure configuration in future updates)
+This extension uses:
+- Google's Generative AI (Gemini)
+- OpenAI's API (for future implementations)
 
 ## Release Notes
 
@@ -48,16 +59,6 @@ Initial release of Wiki Generator with features:
 - Markdown wiki file creation
 - Automatic preview
 - Context menu integration
-
-## Dependencies
-
-This extension uses:
-- Google's Generative AI (Gemini 1.5)
-- OpenAI's API (for future implementations)
-
-## Contributing
-
-Feel free to submit issues and enhancement requests on our repository.
 
 ---
 
