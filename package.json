@@ -1,0 +1,73 @@
+{
+  "name": "wiki-generator",
+  "displayName": "wiki-generator",
+  "description": "It helps you to generate beautiful and descriptive wiki pages for your features",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "wiki-generator.generateWiki",
+        "title": "Generate Wiki"
+      }
+    ],
+    "configuration": {
+      "title": "Wiki Generator",
+      "properties": {
+        "wikiGenerator.provider": {
+          "type": "string",
+          "default": "gemini",
+          "enum": ["gemini", "openai"],
+          "description": "Select the AI provider to use"
+        },
+        "wikiGenerator.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API Key for the selected provider"
+        },
+        "wikiGenerator.geminiModel": {
+          "type": "string",
+          "default": "gemini-pro",
+          "enum": ["gemini-pro", "gemini-pro-vision"],
+          "description": "Select the Gemini model to use"
+        },
+        "wikiGenerator.openaiModel": {
+          "type": "string",
+          "default": "gpt-4",
+          "enum": ["gpt-4", "gpt-3.5-turbo"],
+          "description": "Select the OpenAI model to use"
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.16.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.7.2",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.1.0",
+    "openai": "^4.28.0"
+  }
+}
